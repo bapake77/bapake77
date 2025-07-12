@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro Arvan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#0f0f0f, #1c1c1c);
+      font-family: 'Press Start 2P', monospace;
+      color: #00ffea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }.container {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border: 3px dashed #00ffea;
+  box-shadow: 0 0 25px #00ffea;
+  border-radius: 15px;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+button {
+  background-color: #00ffea;
+  color: #000;
+  font-family: 'Press Start 2P', monospace;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #00ffea;
+}
+
+.email-style {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ff90ec;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="step active">
+      <p>Hallo saya Arvan</p>
+      <p>Ada yang bisa saya bantu?</p>
+      <button onclick="nextStep()">Next</button>
+    </div><div class="step">
+  <p>Jika ada yang mau disampaikan ke Arvan</p>
+  <p>Bisa langsung beri pesan <br> <span class="email-style">(secara singkat)</span></p>
+  <p class="email-style">📨 PESAN NOMOR TIDAK DI KENALI WAJIB PERKENALAN!</p>
+  <button onclick="nextStep()">Next</button>
+</div>
+
+<div class="step">
+  <p>Jika darurat bisa langsung hubungi Arvan</p>
+  <p>Jika tidak terangkat kemungkinan:</p>
+  <p>🕌 Sholat<br>🎉 Hadiri acara penting<br>🎮 Main game ;)</p>
+  <button onclick="nextStep()">Next</button>
+</div>
+
+<div class="step">
+  <p>Sekian, terimakasih!</p>
+  <p>Langsung bisa PC atau Telpon ke:</p>
+  <p style="color:#ff90ec;">📞 087814427977</p>
+</div>
+
+  </div>  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".step");
+
+    function nextStep() {
+      steps[currentStep].classList.remove("active");
+      currentStep++;
+      if (currentStep < steps.length) {
+        steps[currentStep].classList.add("active");
+      }
+    }
+  </script></body>
+</html>
